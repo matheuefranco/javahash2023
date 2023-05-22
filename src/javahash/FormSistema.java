@@ -4,7 +4,7 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 public class FormSistema extends javax.swing.JFrame {
-
+    HashMap<String, Pessoa> meuHash = new HashMap<>();
     
     public FormSistema() {
         initComponents();
@@ -185,7 +185,10 @@ public class FormSistema extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
    
-       
+    void mostra(){
+       // implementar
+       // mostrar o meuHash no list
+    }   
      
     
     private void btnBuscarhmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarhmActionPerformed
@@ -194,7 +197,12 @@ public class FormSistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarhmActionPerformed
 
     private void btnAddhmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddhmActionPerformed
-        
+        Pessoa p = new Pessoa();
+        p.setNome(txtNome.getText());
+        p.setCpf(txtCpf.getText());
+        meuHash.put(p.getCpf(), p);
+        System.out.println(meuHash);
+        mostra();
     }//GEN-LAST:event_btnAddhmActionPerformed
 
     private void btnCarregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregaActionPerformed
