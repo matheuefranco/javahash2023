@@ -5,6 +5,8 @@ import javax.swing.JOptionPane;
 
 public class FormSistema extends javax.swing.JFrame {
     HashMap<String, Pessoa> meuHash = new HashMap<>();
+    LinkedList<Pessoa> mihaLista = new LinkedList<>();
+    ArrayList<String> arrayBusca = new ArrayList<>();
     
     public FormSistema() {
         initComponents();
@@ -186,8 +188,11 @@ public class FormSistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
    
     void mostra(){
-       // implementar
-       // mostrar o meuHash no list
+       listHashTable.setText("");
+       if(!meuHash.isEmpty()){
+           for(Map.Entry<String, Pessoa> dado: meuHash.entrySet())
+               listHashTable.append(dado.getValue()+"\n");
+       }// fim if
     }   
      
     
@@ -201,7 +206,7 @@ public class FormSistema extends javax.swing.JFrame {
         p.setNome(txtNome.getText());
         p.setCpf(txtCpf.getText());
         meuHash.put(p.getCpf(), p);
-        System.out.println(meuHash);
+        //System.out.println(meuHash);
         mostra();
     }//GEN-LAST:event_btnAddhmActionPerformed
 
